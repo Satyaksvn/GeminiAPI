@@ -1,0 +1,252 @@
+.main{
+  flex: 1;
+  min-height: 100vh;
+  padding-bottom: 15vh;
+  position: relative;   
+}
+.main .nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 22px;
+  color: #585858;
+}
+.main .nav img{
+  width: 40px;
+  border-radius: 50%;
+}
+.main-container{
+  max-width: 900px;
+  margin: auto;
+}
+.main .greet{
+  margin: 50px 0;
+  font-size: 56px;
+  color: #C4C7C5;
+  font-weight: 500;
+  padding: 20px;
+  
+}
+.main.greet-container {
+  display: flex;
+  align-items: center;  /* Ensures the robot is beside the text */
+  gap: 10px;
+}
+
+.robot-wave {
+  width: 60px;  /* Adjust size */
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;  /* Makes it round */
+  animation: waveHand 1s infinite alternate ease-in-out; /* Waving effect */
+}
+
+@keyframes waveHand {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+.main .greet span{
+  background: -webkit-linear-gradient(16deg, #4B90FF, #FF5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main .cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.card{
+  height: 200px;
+  padding: 15px;
+  background-color: #F0F4F9;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.card p{
+  color: #585858;
+  font-size: 17px;
+}
+.card img{
+  width: 35px;
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 10px;
+}
+.card:hover{
+  background-color: #DFE4EA;
+}
+.main-bottom{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+  margin: auto;
+}
+.search-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #F0F4F9;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+.search-box img {
+  width: 25px;
+  cursor: pointer;
+}
+.search-box input{
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 18px;
+}
+.search-box .search-box-icon{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.bottom-info{
+  font-size: 13px;
+  margin: 15px auto;
+  text-align: center;
+  font-weight: 300;
+}
+
+.result{
+  padding: 0 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+.result::-webkit-scrollbar{
+  display: none;
+}
+.result-title{
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result img{
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-date{
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+.loader{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.loader hr{
+  border-radius: 4px;
+  border: none;
+  background-color: #F6F7F8;
+  background: linear-gradient(to right, #9ED7FF, #FFFFFF, #9ED7FF);
+  background-size: 800px 50px;
+  height: 20px;
+  animation: loader 3s infinite linear;
+}
+@keyframes loader {
+  0%{
+      background-position: -800px 0px;
+  }
+  100%{
+      background-position: 800px 0px;
+  }
+}
+.result-data p{
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .main-bottom input{
+      flex: none ;
+      width: 150px;
+  }
+  .main-bottom img{
+      width: 20px;
+  }
+  .search-box{
+      padding: 5px 10px;
+  }
+  .search-box div{
+      gap: 5px;
+  }
+
+  .pause-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pause-buttons button {
+    background-color: #4b90ff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+  }
+  
+  .pause-buttons button:hover {
+    background-color: #357ae8;
+  }
+
+  .pause-btn {
+    background: none;
+    border: none;
+    font-size: 24px; /* âœ… Match mic icon size */
+    cursor: pointer;
+    color: #585858;
+    padding: 5px;
+    width: 30px;  /* âœ… Adjust width */
+    height: 30px; /* âœ… Adjust height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pause-btn:hover {
+    color: black;
+}
+
+  
+.search-box-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box-icons img {
+  width: 25px; /* âœ… Keep all icons (mic, pause, send) the same size */
+  cursor: pointer;
+}
+
+  
+  }
+  
+  
+  
